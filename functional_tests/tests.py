@@ -16,7 +16,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_django_installed(self):
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://testHost')
         self.assertIn('Django', self.browser.title)
 
 if __name__ == "__main__":
