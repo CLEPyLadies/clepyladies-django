@@ -1,10 +1,10 @@
 import os
-import unittest
+from django.test import LiveServerTestCase
 
 from selenium import webdriver
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -20,9 +20,6 @@ class NewVisitorTest(unittest.TestCase):
         if self.test_host:
             self.browser.get(self.test_host)
         else:
-            self.browser.get('http://localhost:8000')
+            self.browser.get(self.live_server_url)
         self.assertIn('PyLadies', self.browser.title)
         # self.fail('Finish writing this test!')
-
-if __name__ == "__main__":
-    unittest.main(warnings='ignore')
