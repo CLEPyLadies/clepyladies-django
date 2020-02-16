@@ -22,7 +22,7 @@ class NewVisitorTest(unittest.TestCase):
         else:
             self.browser.get('http://localhost:8000')
         self.assertIn('PyLadies', self.browser.title)
-        self.fail('Finish writing this test!')
+        # self.fail('Finish writing this test!')
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
