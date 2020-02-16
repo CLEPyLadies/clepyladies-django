@@ -23,3 +23,7 @@ class NewVisitorTest(LiveServerTestCase):
             self.browser.get(self.live_server_url)
         self.assertIn('PyLadies', self.browser.title)
         # self.fail('Finish writing this test!')
+
+    def test_layout_and_styling(self):
+        self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024,768)
