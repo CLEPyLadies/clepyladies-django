@@ -16,12 +16,13 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_django_installed(self):
+    def test_app_exists(self):
         if self.test_host:
             self.browser.get(self.test_host)
         else:
             self.browser.get('http://localhost:8000')
-        self.assertIn('Django', self.browser.title)
+        self.assertIn('PyLadies', self.browser.title)
+        self.fail('Finish writing this test!')
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
