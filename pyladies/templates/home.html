@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>Cleveland PyLadies</title>
+    <title>Cleveland PyLadies Check-in</title>
 {% endblock head %}
 
 {% block content %}
+{% for event in events %}
+<div class='event-summary'>
+<h2> {{ event.event_date }}</h2>
+<h3>{{ event.event.event_name }}</h3>
+<p> {{ event.event.event_description|linebreaksbr }}</p>
+
+</div>
+{% endfor %}
 {% endblock content %}
