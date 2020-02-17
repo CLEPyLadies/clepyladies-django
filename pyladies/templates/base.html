@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/pyladies.css' %}">
+        <link rel="stylesheet" href="{% static 'pyladies.css' %}">
         {% block head %}
         <title>Cleveland PyLadies</title>
         {% endblock head %}
@@ -13,7 +13,9 @@
         <div class='page-header'>
             <h1><a href='/'>Cleveland PyLadies</a></h1>
             {% if user.is_authenticated %}
-            <a href="" class="top-menu"><span class="glyphicon glyphicon-plus">Add event check-in</span></a>
+            <div>
+            <a href="/admin"><span class="glyphicon">View admin dashboard</span></a>
+            </div>
             {% endif %}
         </div>
 
