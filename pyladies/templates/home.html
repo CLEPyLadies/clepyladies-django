@@ -3,37 +3,32 @@
 {% load static %}
 
 {% block head %}
-    <title>Cleveland PyLadies Check-in</title>
-    <link rel="stylesheet" href="{% static 'radial.css' %}">
+<title>Cleveland PyLadies Check-in</title>
+<link rel="stylesheet" href="{% static 'css/radial.css' %}">
 {% endblock head %}
 
 {% block content %}
 
-<h2>Coming soon: online check-in</h2>
-
 <!-- Source: https://codepen.io/web-tiki/pen/ZYmZoV -->
 <div class='radial container'>
-<span><span></span></span>
-<div class="wrap">
-<a href="#"><div></div></a>
-<a href="#"><div></div></a>
-<a href="#"><div></div></a>
-<a href="#"><div></div></a>
-<a href="#"><div></div></a>
+    <span><span></span></span>
+    <div class="wrap">
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+    </div>
+    <h2>Coming soon: online check-in</h2>
 </div>
-</div>
-
-{% for event in events %}
-<div class='event-summary'>
-<h2 class='date'> {{ event.event_date }}</h2>
-<h3>{{ event.event.event_name }}</h3>
-<p> {{ event.event.event_description|linebreaksbr }}</p>
-{% if user.is_authenticated %}
-
-<a href=""><span class="glyphicon glyphicon-plus">Add event check-in</span></a>
-
-{% endif %}
-
-</div>
-{% endfor %}
 {% endblock content %}
