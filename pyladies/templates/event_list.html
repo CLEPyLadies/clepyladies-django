@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Cleveland PyLadies</title>
+{% endblock head %}
+
+{% block content %}
+<div class='content container'>
+
+<h2>Coming soon: online check-in</h2>
+
+{% for event in events %}
+<div class='event-summary'>
+    <h2 class='date'> {{ event.event_date }}</h2>
+    <h3>{{ event.event.event_name }}</h3>
+    <p> {{ event.event.event_description|linebreaksbr }}</p>
+    {% if user.is_authenticated %}
+
+    <a href=""><span class="glyphicon glyphicon-plus">Add event check-in</span></a>
+
+    {% endif %}
+
+</div>
+{% endfor %}
+</div>
+{% endblock content %}

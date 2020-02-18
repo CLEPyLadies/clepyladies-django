@@ -1,32 +1,37 @@
 {% load static %}
 <html>
+
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'pyladies.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pyladies.css' %}">
         {% block head %}
         <title>Cleveland PyLadies</title>
         {% endblock head %}
     </head>
+
     <body>
         <div class='page-header'>
             <h1><a href='/'>Cleveland PyLadies</a></h1>
             {% if user.is_authenticated %}
             <div>
-            <a href="/admin"><span class="glyphicon">View admin dashboard</span></a>
+                <a href="/admin"><span class="glyphicon">View admin dashboard</span></a>
             </div>
             {% endif %}
         </div>
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock content %}
-                </div>
-            </div>
-        </div>
-        
+
+
+        {% comment %} <div class="content container"> {% endcomment %}
+            {% comment %} <div class="row">
+                <div class="col-md-8"> {% endcomment %}
+                    {% block content %}
+                    {% endblock content %}
+                {% comment %} </div>
+            </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+
     </body>
+
 </html>
